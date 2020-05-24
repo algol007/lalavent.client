@@ -44,7 +44,7 @@
             <h3 class="lead evn-title mt-3 font-italic text-light">Note: setelah mendaftar dan mendapatkan tiket, Anda tidak perlu mendaftar ulang untuk konfirmasi kehadiran saat acara berlangsung</h3>
        </div>
        <div class="col-md-4 evn-secondary px-4 py-3" style="border-top-right-radius: 30px">
-           <ul class="list-group w-100 my-4 mx-2">
+           <ul v-if="dataDetail[0].status === 1" class="list-group w-100 my-4 mx-2">
                 <li class="list-group-item border-0 bg-transparent px-3 py-3">
                     <button @click.prevent="daftarEvent" class="text-light evn-title w-100  bg-warning evn-shadow btn-custom">
                         <slot>DAFTAR</slot>
