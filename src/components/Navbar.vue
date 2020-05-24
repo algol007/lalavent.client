@@ -26,7 +26,7 @@
             <i class="fas fa-calendar-alt mr-1"></i>
             <router-link to="/event" class="nav-link">Semua Event</router-link>
           </li>
-          <li class="nav-item mr-4 dropdown" v-if="this.local">
+          <li class="nav-item mr-4 dropdown" v-if="this.local.id !== null">
             <img :src="this.user.image" alt="profile-img" class="profile-img mr-1">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ this.user.name }}</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">

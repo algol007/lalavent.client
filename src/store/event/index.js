@@ -20,7 +20,7 @@ export default ({
     },
     organizerEvents (state, data) {
       state.organizerEvents = data
-      // console.log(state.events)
+      console.log(state.organizerEvents)
     },
     organizerOngoingEvent (state, data) {
       const d = new Date()
@@ -34,8 +34,8 @@ export default ({
       const ongoingEvent = events.filter(event => event.date === dateStr)
       state.ongoingEvent = ongoingEvent
       // console.log(events[0].date)
-      // console.log(state.ongoingEvent[0].title)
-      // console.log(state.organizerEvents)
+      console.log(state.ongoingEvent[0].title)
+      console.log(state.organizerEvents)
     },
     search (state, data) {
       state.events = data
@@ -47,7 +47,7 @@ export default ({
     },
     searchInput (state, data) {
       state.search = data
-      // console.log(state.search)
+      console.log(state.search)
     }
   },
   actions: {
@@ -110,7 +110,7 @@ export default ({
         .get(process.env.VUE_APP_BASE_URL + 'event/user/' + organizerId)
         .then(res => {
           // console.log(res)
-          context.commit('organizerEvents', res.data.event.rows)
+          context.commit('organizerEvents', res.data.events.rows)
         })
     },
     getOrganizerOngoingEvent (context, organizerId) {
@@ -118,7 +118,7 @@ export default ({
       axios
         .get(process.env.VUE_APP_BASE_URL + 'event/user/' + organizerId)
         .then(res => {
-          // console.log(res)
+          console.log(res)
           context.commit('organizerOngoingEvent', res.data.event.rows)
         })
     }

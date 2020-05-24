@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     getEvent () {
-      axios.get(`http://192.168.1.97:5000/api/lalavent/event/${this.$route.params.idEvent}`)
+      axios.get(process.env.VUE_APP_BASE_URL + `event/${this.$route.params.idEvent}`)
         .then((res) => {
           this.myEvent = res.data.event
         })

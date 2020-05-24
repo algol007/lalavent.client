@@ -72,7 +72,7 @@ export default {
     }
   },
   beforeCreate () {
-    axios.patch(`http://192.168.1.97:5000/api/lalavent/user/activation?token=${this.$route.query.token}`)
+    axios.patch(process.env.VUE_APP_BASE_URL + `user/activation?token=${this.$route.query.token}`)
       .then((res) => {
         console.log(res)
       })
@@ -210,5 +210,98 @@ export default {
     position: absolute;
     top: 525px;
     width:170px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+.container-login{
+  display: flex;
+  flex-direction: column;
+  .left-login{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/img/event.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 150px;
+    h1{
+      margin-left: 40px;
+      margin-top: 50px;
+      margin-bottom: 30px;
+      margin-right: 0;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      span{
+        color: #f1c40f;
+      }
+    }
+  }
+  .right-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 35px;
+    margin: 0;
+    .title-login{
+      h5{
+        font-size: 50px;
+        font-weight: bolder;
+        color: white;
+      }
+    }
+    label {
+      font-size: 1.5rem;
+    }
+    .star {
+      color: #f1c40f;
+    }
+    .is-invalid {
+      border-color: red !important;
+    }
+    .invalid-feedback {
+      color: red;
+    }
+    .account{
+      .event{
+        margin: 0 0;
+      }
+      p{
+        margin: 15px 0 0;
+        color: white;
+        .sign{
+          color: #f1c40f;
+        }
+      }
+    }
+  }
+}
+.material-icons{
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 10px;
+}
+.alertdiv{
+    background-color: #fff7f7;
+    border-radius: 5px;
+    width: 205px;
+    height: 40px;
+}
+.color-red{
+    border: 1px solid #f1c40f;
+    position: absolute;
+    top: 555px;
+    width: 325px;
+}
+.color-orange{
+    border: 1px solid #f1c40f;
+    position: absolute;
+    top: 555px;
+}
+.wrong{
+    border: 1px solid #f1c40f;
+    position: absolute;
+    top: 555px;
+    width:170px;
+}
 }
 </style>

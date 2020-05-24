@@ -94,7 +94,7 @@
         </div>
       </div>
     </div>
-    <modal title="Update Personal Profil" button="Ok" id="success-payment" dismiss="modal">
+    <modal title="Update Personal Profil" button="Ok" id="success-payment" dismiss="modal" v-on:ticket="ticket">
       <p>Tiket Created!</p>
     </modal>
   </div>
@@ -119,6 +119,9 @@ export default {
     modal
   },
   methods: {
+    ticket () {
+      this.$router.push('/dashboard')
+    },
     applyPayment () {
       const cardName = document.querySelector('.one')
       const check = document.querySelector('.checked')
@@ -127,7 +130,7 @@ export default {
     },
     createTiket () {
       axios
-        .post('http://192.168.1.97:5000/api/lalavent/ticket', {
+        .post(process.env.VUE_APP_BASE_URL + 'ticket', {
           event_id: this.events.id,
           user_id: this.local.id,
           price: this.events.price
@@ -137,9 +140,9 @@ export default {
         })
         .then(res => {
           console.log(res)
-          setTimeout(() => {
-            this.$router.push('/dashboard')
-          }, 2000)
+          // setTimeout(() => {
+          //   this.$router.push('/dashboard')
+          // }, 2000)
         })
         .catch(error => {
           console.log(error)

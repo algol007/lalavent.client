@@ -93,7 +93,7 @@ export default {
         return
       } else {
         console.log('Submit ok')
-        axios.post('http://192.168.1.97:5000/api/lalavent/auth/signup', {
+        axios.post(process.env.VUE_APP_BASE_URL + 'auth/signup', {
           name: this.name,
           address: this.address,
           email: this.email,
@@ -172,5 +172,69 @@ export default {
       }
     }
   }
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .container-register{
+  display: flex;
+  flex-direction: column;
+  .up-register{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/img/owner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 300px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .title-register{
+      margin: 10px 0 0 50px;
+      h5{
+        font-size: 30px;
+        font-weight: bolder;
+        color: white;
+      }
+    }
+    .brands{
+    // display: none;
+    color: #eeeeee;
+    margin: 140px 50px 0;
+    .fas{
+      font-size: 25px;
+    }
+    .brand{
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+  }
+  label {
+  font-size: 1.5rem;
+  }
+  .star {
+  color: #f1c40f;
+  }
+  .is-invalid {
+  border-color: red !important;
+  }
+  .invalid-feedback {
+  color: red;
+  }
+  .mt-4 Button{
+    margin-bottom: 10px;
+  }
+  .account{
+    display: flex;
+    flex-direction: row-reverse;
+    p{
+      margin: 10px 0 20px;
+      color: white;
+      .sign{
+        color: #f1c40f;
+      }
+    }
+  }
+}
 }
 </style>

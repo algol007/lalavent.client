@@ -1,24 +1,24 @@
 <template>
-  <div class="profile-user">
-    <div class="container mt-5 mb-5">
+  <div class="profile-user container">
+    <div class="mt-5 mb-5">
       <div class="card evn-secondary">
-        <div class="card-body d-flex justify-content-start">
-          <div class="photo-profil">
-            <div class="photo mb-4 d-flex flex-column">
+        <div class="card-body d-flex flex-wrap row">
+          <div class="photo-profil col-md-6 mx-auto">
+            <div class="photo mb-4 d-flex flex-column justify-content-center">
               <img :src="this.image" alt="" class="mb-2" v-if="this.image !== null">
-              <img :src="user.image" alt="" class="mb-2" v-else>
+              <img :src="user.image" alt="" class="mb-2 mx-auto" v-else>
               <div class="upload-btn-wrapper mx-auto">
                 <button class="btn evn-desc">Upload a file</button>
                 <input type="file" ref="file" name="myfile" @change="upload"/>
               </div>
             </div>
-            <div class="action-button d-flex flex-column">
+            <div class="action-button d-flex flex-column col-md-8 col-sm-12 mx-auto">
               <Button class="mb-4" @btn-click="editInput" v-if="this.editData == true">Edit Profil</Button>
               <Button class="mb-4" @btn-click="cancelEdit" v-else>Cancel</Button>
-              <Button @btn-click="editUser" data-toggle="modal" data-target="#edit-profil">Save</Button>
+              <Button class="mb-4" @btn-click="editUser" data-toggle="modal" data-target="#edit-profil">Save</Button>
             </div>
           </div>
-          <div class="profil-user">
+          <div class="profil-user col-md-6">
             <div class="info-user">
               <h4 class="text-light evn-title text-center">Informasi Pribadi</h4>
             </div>

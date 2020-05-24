@@ -1,5 +1,5 @@
 <template>
-  <div class="evn-primary">
+  <div class="container container-fluid my-5">
     <ProfilUser />
     <Footer/>
   </div>
@@ -27,6 +27,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>
